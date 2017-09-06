@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	<!-- 主界面移动、菜单不动 -->
+	<div class="mui-off-canvas-wrap mui-draggable">
+	  <!-- 菜单容器 -->
+	  <aside class="mui-off-canvas-left" id="offCanvasSide">
+	    <div class="mui-scroll-wrapper" style="background-color: azure;">
+	      <div class="mui-scroll">
+	        <!-- 菜单具体展示内容 -->
+	        	<h3>功能菜单</h3>
+	        	<h4>工作日志</h4>
+	        	<h4>云通知</h4>
+	        	<h4>云空间</h4>
+	        	<h4>工作上报</h4>
+	        	<h4>市场调查</h4>
+	        	<h4>通讯录</h4>
+	        					
+	      
+	      </div>
+	    </div>
+	  </aside>
+	  <!-- 主页面容器 -->
+	  <div class="mui-inner-wrap">
+	    <!-- 主页面标题 -->
+	    <header class="mui-bar mui-bar-nav">
+	      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>
+	      	      <a class="mui-icon mui-action-menu mui-icon-gear mui-pull-right" id="setting"></a>
+
+	      <h1 class="mui-title">工作宝管理系统</h1>
+	    </header>
+	    <nav class="mui-bar mui-bar-tab" id="nav">
+		    <a class="mui-tab-item mui-active" id="a1">
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a class="mui-tab-item" id="a2">
+		        <span class="mui-icon mui-icon-phone"></span>
+		        <span class="mui-tab-label">客户</span>
+		    </a>
+		   
+		    <a class="mui-tab-item" id="a3">
+		        <span class="mui-icon mui-icon-person"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		</nav>
+	    <div class="mui-content mui-scroll-wrapper">
+	      <div class="mui-scroll">
+	        <!-- 主界面具体展示内容 -->
+	         <ul class="mui-table-view mui-grid-view mui-grid-9">
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="mywork">
+	                 <span class="mui-icon mui-icon-compose" style="color: red;"></span>
+	                 <div class="mui-media-body">工作日志</div>
+	             </a>
+	             
+	         </li>
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="message">
+	                 <span class="mui-icon mui-icon-email" style="color: red;"></span>
+	                 <div class="mui-media-body">云通知</div>
+	             </a>
+	         </li>
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="space">
+	             	
+	                 <span class="mui-icon mui-icon-star	" style="color: red;"></span>
+	                 <div class="mui-media-body">云空间</div>
+	             </a>
+	             
+	         </li>
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="datareport">
+	                 <span class="mui-icon mui-icon-arrowthinup" style="color: red;"></span>
+	                 <div class="mui-media-body">工作上报</div>
+	             </a>
+	         </li>
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="research">
+	                 <span class="mui-icon mui-icon-search" style="color: red;"></span>
+	                 <div class="mui-media-body">市场调查</div>
+	             </a>
+	         </li>
+	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             <a href="#" id="contact">
+	                 <span class="mui-icon mui-icon-phone" style="color: red;"></span>
+	                 <div class="mui-media-body">通讯录</div>
+	             </a>
+	         </li>
+	             </ul>
+	         		
+	      </div>
+	    </div> 
+	    <div class="mui-off-canvas-backdrop"></div>
+	  </div> 
+	  
+	</div>
+<script>
+	mui.init()
+   document.getElementById('mywork').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'work.html'
+   })	
+   })
+   
+    document.getElementById('message').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'message.html'
+   })	
+   })
+     document.getElementById('space').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'space.html'
+   })	
+   })
+      document.getElementById('datareport').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'datareport.html'
+   })	
+   })
+       document.getElementById('research').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'research.html'
+   })	
+   })
+        document.getElementById('contact').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'contact.html'
+   })	
+   })
+
+document.getElementById('setting').addEventListener('tap',function(){
+	mui.openWindow({
+		url:'setting.html'
+	})
+})
+function customer(){
+	mui.openWindow({
+	url:'customer.html'
+   })	
+}
+
+</script>
+
+ <script type="text/javascript" charset="utf-8">  
+            mui.init({  
+                    subpages:[//先加载首页  
+                        {  
+                          url:'index.html',  
+                          id:'a1',  
+                          styles:{  
+                             top:'0px',  
+                                bottom:'0px'  
+                          }  
+                        }  
+                          
+                    ],  
+                    preloadPages:[//缓存其他页面  
+                        {  
+                          url:'customer.html',  
+                          id:'a2',  
+                          styles:{  
+                             top:'0px',  
+                            bottom:'60px'  
+                          }  
+                        },  
+                        {  
+                          url:'mine.html',  
+                          id:'a3',  
+                          styles:{  
+                             top:'0px',  
+                            bottom:'60px'  
+                          }  
+                        }  
+                    ]  
+                      
+                });  
+            mui.plusReady(function(){   
+                // 获取所有Webview窗口  
+                
+                var winAll=plus.webview.all();//获取所有窗体  
+                //console.log(JSON.stringify(winAll))   
+                var a1,a2,a3  
+                mui("#nav").on("tap","#a1",function(){//点击触发   
+                //	alert('a1')
+                    a1=plus.webview.getWebviewById("a1");  
+                    console.log(JSON.stringify(a1))   
+                 a1.show()  
+                    a2.hide()//这一步必须有  
+                    a3.hide()//这一步必须有  
+                })  
+                mui("#nav").on("tap","#a2",function(){//点击触发  
+//              	alert('a2')
+                    a2=plus.webview.getWebviewById("a2");  
+                    a2.show()  
+                      
+                })  
+//              alert('a3')
+                mui("#nav").on("tap","#a3",function(){//点击触发  
+                    a3=plus.webview.getWebviewById("a3");  
+                    a3.show()  
+                      
+                })  
+            });  
+        </script>  
+</body>
+</html>

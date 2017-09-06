@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style type="text/css">
+			.mui-table-view-cell  {
+			height: 100px;	
+	}
+	
+	.mui-pull-left {
+		height: 80px;
+		width: 80px;
+	}
+	.mui-media-body  {
+			padding: 0px 10px 0px 10px;
+
+		
+	}
+	p {
+		
+		color: black;
+	}
+		</style>
+		
+	</head>
+
+	<body>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+  <li class="mui-table-view-cell mui-media">
+     <a href="javascript:;"> 
+      <img class="mui-pull-left" src="myIcon.png">
+      <div class="mui-media-body">
+           徐雨塘
+        <p id="mytest"  class='mui-ellipsis'>这是工作日志的内容</p>
+        <p>2017-08-27 14:05:52</p>
+      </div>
+    </a>
+  </li>		
+				</ul>
+			</div>
+		</div> 
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//					for (var i = cells.length, len = i + 3; i < len; i++) {
+//						var li = document.createElement('li');
+//						li.className = 'mui-table-view-cell';
+//						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//						//下拉刷新，新纪录插到最前面；
+//						table.insertBefore(li, table.firstChild);
+//					}
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+				}, 1500);
+			}
+			var count = 0;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//					for (var i = cells.length, len = i + 20; i < len; i++) {
+//						var li = document.createElement('li');
+//						li.className = 'mui-table-view-cell';
+//						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//						table.appendChild(li);
+//					}
+				}, 1500);
+			}
+			if (mui.os.plus) {
+				
+				mui.plusReady(function() {
+
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pulldownLoading();
+					}, 1000);
+
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();q
+				});
+			}
+			
+			mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
+				mui.openWindow({
+					url:'workdetail.html'
+				})
+			})
+		</script>
+	</body>
+
+</html>
