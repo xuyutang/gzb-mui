@@ -1,1 +1,141 @@
-null
+{
+  "customer.html": {
+    "href": "customer.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "contact.html": {
+    "href": "contact.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "message.html": {
+    "href": "message.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "space.html": {
+    "href": "space.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "setting.html": {
+    "href": "setting.html",
+    "resources": [
+      "js/mui.min.js",
+      "js/mui.view.js",
+      "js/feedback.js",
+      "img/logo.png",
+      "css/mui.min.css",
+      "css/feedback.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "research.html": {
+    "href": "research.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "workdetail.html": {
+    "href": "workdetail.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "pullrefresh_sub.html": {
+    "href": "pullrefresh_sub.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "myIcon.png"
+    ],
+    "refer": [
+      "workdetail.html"
+    ],
+    "priority": 0
+  },
+  "pullrefresh_main.html": {
+    "href": "pullrefresh_main.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "pullrefresh_sub.html"
+    ],
+    "priority": 0
+  },
+  "work.html": {
+    "href": "work.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "pullrefresh_main.html"
+    ],
+    "priority": 0
+  },
+  "datareport.html": {
+    "href": "datareport.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "mine.html": {
+    "href": "mine.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "customer.html",
+      "contact.html",
+      "message.html",
+      "space.html",
+      "setting.html",
+      "research.html",
+      "work.html",
+      "datareport.html",
+      "index.html",
+      "mine.html"
+    ],
+    "priority": 0
+  }
+}
