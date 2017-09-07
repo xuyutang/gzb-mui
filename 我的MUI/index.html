@@ -22,23 +22,23 @@
 	        <!-- 菜单具体展示内容 -->
 	        	<h3>功能菜单</h3>
 	       <ul class="mui-table-view">
-    <li class="mui-table-view-cell">
+    <li class="mui-table-view-cell"  id="work1">
         <a class="mui-navigate-right">工作日志</a>
     </li>
-    <li class="mui-table-view-cell">
+    <li class="mui-table-view-cell" id="message1">
         <a class="mui-navigate-right">云通知</a>
     </li>
     <li class="mui-table-view-cell">
-        <a class="mui-navigate-right">云空间</a>
+        <a class="mui-navigate-right" id="space1">云空间</a>
     </li>
      <li class="mui-table-view-cell">
-        <a class="mui-navigate-right">工作上报</a>
+        <a class="mui-navigate-right" id="datareport1">工作上报</a>
     </li>
     <li class="mui-table-view-cell">
-        <a class="mui-navigate-right">市场调查</a>
+        <a class="mui-navigate-right" id="research1">市场调查</a>
     </li>
     <li class="mui-table-view-cell">
-        <a class="mui-navigate-right">通讯录</a>
+        <a class="mui-navigate-right" id="contact1">通讯录</a>
     </li>
     
 </ul>
@@ -167,6 +167,44 @@
    })	
    })
         document.getElementById('contact').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'contact.html'
+   })	
+   })
+
+ document.getElementById('work1').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'work.html'
+   })	
+   })
+   
+    document.getElementById('message1').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'message.html'
+   })	
+   })
+     document.getElementById('space1').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'space.html'
+   })	
+   })
+      document.getElementById('datareport1').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'datareport.html'
+   })	
+   })
+       document.getElementById('research1').addEventListener('tap',function(){
+   	
+   	mui.openWindow({
+	url:'research.html'
+   })	
+   })
+        document.getElementById('contact1').addEventListener('tap',function(){
    	
    	mui.openWindow({
 	url:'contact.html'
