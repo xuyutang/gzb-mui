@@ -32,7 +32,7 @@
 	<body>
 		<div class="mui-content">
 		    <div id="myIcon" style="padding-top: 30px;">
-		    	<center> <img src="img/myIcon.png"/></center>
+		    	<center> <img src="img/myIcon.png"/ id="mypicture"></center>
 		    
 		    	<p>徐雨塘</p>
 		    	<p>18356033252</p>
@@ -64,11 +64,36 @@
     </li>
     
 </ul>
+
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
+			document.getElementById("mypicture").addEventListener('tap',function () {
+			var btnArray = [{title:"拍照或录像"},{title:"选取现有的"}];
+			plus.nativeUI.actionSheet( {
+				title:"选择照片",
+				cancel:"取消",
+				buttons:btnArray
+			}, function(e){
+				var index = e.index;
+				var text = "你刚点击了\"";
+				switch (index){
+					case 0:
+						text += "取消";
+						break;
+					case 1:
+						text += "拍照或录像";
+						break;
+					case 2:
+						text += "选取现有的";
+						break;
+				}
+				info.innerHTML = text+"\"按钮";
+			} );
+		});
 		</script>
+		
 	</body>
 
 </html>
