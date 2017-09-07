@@ -1,7 +1,7 @@
 #card {
 	
 	height: 90px;
-	background-color: greenyellow;
+	background-color: green;
 }
  #imag {
 	height: 90px;
@@ -11,6 +11,10 @@
 	
 }
 
-.name {
+.test {
 	padding-left: 100px;
+	color: white;
+	font-size: 16px;
 }
+
+
