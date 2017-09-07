@@ -6,16 +6,123 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/my.css" />
 		<header class="mui-bar mui-bar-nav">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">市场调查</h1>
 		</header>
 	</head>
-
+    
 	<body>
+		<div class="mui-content">
+		    <ul class="mui-table-view">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    客户名称
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+                         合肥市原创动漫园
+		                <a class="mui-icon mui-icon-refresh mui-pull-right">
+		                </a>
+		            </li>
+		          
+		        </ul>
+		        
+		        <img src="img/add_photo.png"/ id="camer" style="padding-top: 20px;padding-left: 15px;">
+		        <p style="padding-left: 15px;">长按图片可以删除</p>
+		        
+		        <div id="ss" style="padding-left: 15px;padding-right: 15px;padding-top: 15px;">
+		        	<h5 style="color: black;font-size: 16px;">现场记录</h5>
+		        
+		        <textarea style="height: 100px;"></textarea>
+		        </div>
+		      
+		        <ul class="mui-table-view">
+		            <li class="mui-table-view-cell mui-collapse">
+		                <a class="mui-navigate-right" href="#">市场信息</a>
+		                <div class="mui-collapse-content">
+                          <div id="research-content">
+                          	<h5>经营规模</h5>
+                          	<textarea placeholder="选填(1000字以内)" style="height: 90px; font-size: 14px;" style="height: 90px; font-size: 14px;" style="height: 90px; font-size: 14px;"></textarea>
+                          </div>
+                           <div id="research-content">
+                          	<h5>经营品种</h5>
+                          	<textarea placeholder="选填(1000字以内)" style="height: 90px; font-size: 14px;"></textarea>
+                          </div>
+                           <div id="research-content">
+                          	<h5>主力产品</h5>
+                          	<textarea placeholder="选填(1000字以内)" style="height: 90px; font-size: 14px;"></textarea>
+                          </div>
+                           <div id="research-content">
+                          	<h5>营业额</h5>
+                          	<textarea placeholder="选填(1000字以内)" style="height: 90px; font-size: 14px;"></textarea>
+                          </div>
+                           <div id="research-content">
+                          	<h5>营业面积</h5>
+                          	<textarea placeholder="选填(1000字以内)" style="height: 90px; font-size: 14px;"></textarea>
+                          </div>
+		                </div>
+		            </li>
+		          
+		        </ul>
+		        
+		</div>
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
+			document.getElementById('camer').addEventListener('tap',function(){
+			clickCamera()
+			})
+			
+			  function clickCamera() {  
+        var cmr = plus.camera.getCamera();  
+        var res = cmr.supportedImageResolutions[0];  
+        var fmt = cmr.supportedImageFormats[0];  
+        cmr.captureImage(function(path) {  
+            //plus.io.resolveLocalFileSystemURL(path, function(entry) {  
+            plus.io.resolveLocalFileSystemURL(path, function(entry) {  
+                var localUrl = entry.toLocalURL();  
+                plus.zip.compressImage({  
+                    src: localUrl,  
+                    dst: "_doc/chat/camera/" + localUrl,  
+                    quality: 20,  
+                    overwrite: true  
+                }, function(e) {  
+                    var task = plus.uploader.createUpload(server + "upload/chat", {  
+                        method: "post"  
+                    }, function(t, sta) {  
+                        if(sta == 200) {  
+                            var msg = t.responseText;  
+                            var oImg = JSON.parse(msg);  
+                            var imgUrl = oImg.urls;  
+                            var re = new RegExp("\\\\", "g");  
+                            imgUrl = imgUrl.replace(re, "/");  
+                            console.log(imgUrl);  
+                            uploadMsg(2, imgUrl);  
+                        }  
+                    });  
+                    task.addFile(e.target, {});  
+                    task.start();  
+                }, function(err) {  
+                    console.log("压缩失败：  " + err.message);  
+                });  
+            });  
+        }, function(err) {  
+            console.error("拍照失败：" + err.message);  
+        }, {  
+            index: 1  
+        });  
+    };  
+  
+  
+              
+              
+            if(window.plus){  
+                plusReady();  
+            }else{  
+                document.addEventListener("plusready",plusReady,false);  
+            }  
 		</script>
 	</body>
 
