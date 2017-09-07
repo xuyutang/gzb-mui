@@ -9,6 +9,7 @@
 		<header class="mui-bar mui-bar-nav">
 		    <h1 class="mui-title">我的</h1>
 		</header>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 		<style>
 			#myIcon {
 				height: 300px;
@@ -83,13 +84,15 @@
 						text += "取消";
 						break;
 					case 1:
-						text += "拍照或录像";
+						//text += "拍照或录像";
+						 clickCamera()
 						break;
 					case 2:
 						text += "选取现有的";
+						clickGallery()
 						break;
 				}
-				info.innerHTML = text+"\"按钮";
+			//	info.innerHTML = text+"\"按钮";
 			} );
 		});
 		</script>
